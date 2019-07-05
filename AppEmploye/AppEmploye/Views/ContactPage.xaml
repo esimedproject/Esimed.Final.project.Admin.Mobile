@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppEmploye.Views.ContactPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <StackLayout>
+            <Picker
+                Title="Client"
+                ItemDisplayBinding="{Binding Firstname}"
+                ItemsSource="{Binding Users}"
+                SelectedItem="{Binding User}" />
+            <Entry Placeholder="Moyen de contact" Text="{Binding MeanOfContact}" />
+            <Entry Placeholder="Description" Text="{Binding Subject}" />
+            <Button
+                Command="{Binding CreateHistorique}"
+                HeightRequest="75"
+                Text="Crée"
+                VerticalOptions="End" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

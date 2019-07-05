@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppEmploye.Views.MagazinesPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:behavior="clr-namespace:AppEmploye.Behaviors">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="100" />
+            </Grid.RowDefinitions>
+
+            <ListView
+                Grid.Row="0"
+                behavior:ItemTappedCommandListView.ItemTappedCommand="{Binding GoToMagazine}"
+                HasUnevenRows="True"
+                ItemsSource="{Binding Magazines}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Nom}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button
+                Grid.Row="1"
+                Command="{Binding CreateMagazine}"
+                Text="Créer magazine" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage
+    x:Class="AppEmploye.Views.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:AppEmploye.Views">
+    <TabbedPage.Children>
+        <views:UsersPage Title="Clients" BindingContext="{Binding UsersModelView}" />
+        <views:MagazinesPage Title="Magazines" BindingContext="{Binding MagazineModelView}" />
+
+    </TabbedPage.Children>
+</TabbedPage>

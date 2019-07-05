@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppEmploye.Views.LoginPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <StackLayout Margin="50">
+            <Entry
+                Keyboard="Email"
+                Placeholder="Mail"
+                Text="{Binding Mail}" />
+            <Entry
+                IsPassword="True"
+                Placeholder="Password"
+                Text="{Binding Password}" />
+            <Button Command="{Binding ConnectCommand}" Text="Se connecter" />
+            <ActivityIndicator
+                Margin="0,150,0,0"
+                HorizontalOptions="Center"
+                IsRunning="{Binding IsBusy}"
+                IsVisible="{Binding IsBusy}"
+                VerticalOptions="Center"
+                Color="{StaticResource WhiteColor}">
+                <ActivityIndicator.WidthRequest>
+                    <OnPlatform x:TypeArguments="x:Double" Android="100" />
+                </ActivityIndicator.WidthRequest>
+            </ActivityIndicator>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

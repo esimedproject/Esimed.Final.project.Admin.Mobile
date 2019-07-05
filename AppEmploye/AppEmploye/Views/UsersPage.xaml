@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppEmploye.Views.UsersPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:behavior="clr-namespace:AppEmploye.Behaviors">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="100" />
+            </Grid.RowDefinitions>
+            <ListView
+                Grid.Row="0"
+                behavior:ItemTappedCommandListView.ItemTappedCommand="{Binding GoToClient}"
+                HasUnevenRows="False"
+                ItemsSource="{Binding User}"
+                SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Detail="{Binding Lastname}" Text="{Binding Firstname}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button
+                Grid.Row="1"
+                Command="{Binding CreateHistorique}"
+                Text="Ajout relation client" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
